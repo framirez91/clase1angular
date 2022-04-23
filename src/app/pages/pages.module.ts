@@ -2,12 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ContactsComponent } from './contacts/contacts.component';
+import { ContactComponent } from './contact/contact.component';
 import { PostsComponent } from './posts/posts.component';
+import { PostsModule } from './posts/posts.module';
+
+
 
 @NgModule({
-  declarations: [HomeComponent, AboutComponent, ContactsComponent, PostsComponent],
-  imports: [CommonModule],
-  exports: [HomeComponent, AboutComponent,ContactsComponent,PostsComponent],
+  declarations: [
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
+  ],
+  imports: [
+    CommonModule,
+    PostsModule
+  ],
+  exports:[
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
+  ]
 })
-export class PagesModule {}
+export class PagesModule { }

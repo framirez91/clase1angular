@@ -7,13 +7,20 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  posts : any[] = [];
 
-  constructor(private postService: PostsService) { }
+  posts:any[]=[];
+  constructor(private service:PostsService) { }
 
   ngOnInit(): void {
-    this.postService.getPostsData().subscribe((resp:any) => this.posts = resp);
-    
+    this.service.getPostsData()
+    .subscribe((resp:any)=>{
+      console.log(resp);
+      this.posts = resp;
+    })
+  }
+
+  onClickSomeChild(id:number){
+    console.log("Hijo clickeado:" + id);
   }
 
 }

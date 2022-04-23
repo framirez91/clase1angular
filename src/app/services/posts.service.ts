@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
 export class PostsService {
 
   constructor(private http:HttpClient) { }
-   getPostsData(){
-      return this.http.get('https://jsonplaceholder.typicode.com/posts');
-   }
 
+  getPostsData(){
+    return this.http.get("https://jsonplaceholder.typicode.com/posts");
+  }
 }
